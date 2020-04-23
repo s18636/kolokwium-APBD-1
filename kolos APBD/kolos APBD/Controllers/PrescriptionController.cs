@@ -30,8 +30,16 @@ namespace kolos_APBD.Controllers
 
         // POST api/<controller>
         [HttpPost]
-        public void Post([FromBody]string value)
+        public IActionResult Post(Prescription prescription)
         {
+            try
+            {
+
+            }
+            catch (Exception e) 
+            {
+                return NotFound(e.Message);
+            }
         }
 
     }

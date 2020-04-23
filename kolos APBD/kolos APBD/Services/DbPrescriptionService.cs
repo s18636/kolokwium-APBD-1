@@ -56,5 +56,22 @@ namespace kolos_APBD.Services
                 return pr;
             }
         }
+        public void AddPrescription(Prescription prescription)
+        {
+            using (var connection = new SqlConnection(ConnectionString))
+            using (var command = new SqlCommand())
+            {
+                command.Connection = connection;
+                command.CommandText = "INSERT INTO Prescription VALUES (@Date, @DueDate, @IdPatient, @IdDoctor)";
+                command.Parameters.AddWithValue("Date", prescription.Date);
+                command.Parameters.AddWithValue("DueDate", prescription.DueDate);
+                command.Parameters.AddWithValue("IdPatient", prescription.idPatient);
+                command.Parameters.AddWithValue("IdDoctor", prescription.idDoctor);
+
+                command.ExecuteNonQuery();
+             
+            }
+        }
     }
+    
 }
