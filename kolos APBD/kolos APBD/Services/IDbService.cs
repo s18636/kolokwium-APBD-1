@@ -9,6 +9,7 @@ namespace kolos_APBD.Services
     public interface IDbService
     {
         public Prescription GetPrescription(int id);
+        public void AddPrescription(Prescription prescription);
 
     }
 }

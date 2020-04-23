@@ -34,7 +34,8 @@ namespace kolos_APBD.Controllers
         {
             try
             {
-
+                _dbService.AddPrescription(prescription);
+                return Ok();
             }
             catch (Exception e) 
             {
